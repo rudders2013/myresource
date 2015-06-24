@@ -2,22 +2,22 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="resources/assets/css/jquery.mobile-1.4.5.css">
     <script type="text/javascript" src="resources/assets/js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="resources/assets/js/jquery.mobile-1.4.5.js"></script>
     <title>index</title>
-    <script type="text/javascript">
-        //		alert("try try");
-    </script>
+
+
 </head>
 <body>
-<div data-role="page" id="pageone">
-    <div data-role="header" data-position="fixed" data-fullscreen="true">
+<div data-role="page" id="pageone" >
+    <div data-role="header" data-fullscreen="true">
         <div data-role="navbar">
             <ul>
                 <li>
                     <a href="http://m.baidu.com" class="ui-btn-active  ui-state-persist">首页</a>
+
                 </li>
                 <li>
                     <a href="#anylink">页面二</a>
@@ -30,6 +30,67 @@
     </div>
 
     <div data-role="content">
+
+        <a href="#pagetwo2" data-rel="dialog">Go To The Themed Dialog Page</a>
+
+        <div data-role="page" id="pagetwo2" data-overlay-theme="e">
+            <div data-role="header" data-theme="b"></div>
+            <div data-role="content" data-theme="a"></div>
+            <div data-role="footer" data-theme="c"></div>
+        </div>
+
+
+        <form method="post" action="demoform.html">
+            <div data-role="fieldcontain"><label for="switch">Toggle Switch:</label> <select name="switch" id="switch"
+                                                                                             data-role="slider">
+                <option value="on">On</option>
+                <option value="off" selected="true">Off</option>
+
+            </select></div>
+        </form>
+
+
+        <form method="post" action="demo_form.php">
+            <div data-role="fieldcontain"><label for="fullname">全名:</label> <input type="text" name="fullname"
+                                                                                   id="fullname">
+                <label for="bday">生日:</label> <input type="date" name="bday" id="bday">
+                <label for="email">E-mail:</label> <input type="email" name="email" id="email" placeholder="你的电子邮箱..">
+                <label for="info">附加信息:</label> <textarea name="addinfo" id="info"></textarea>
+                <label for="search">搜索:</label> <input type="search" name="search" id="search">
+            </div>
+        </form>
+        <br>
+
+        <form method="post" action="demo_form.php">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Choose your gender:</legend>
+                <label for="male">Male</label> <input type="radio" name="gender" id="male" value="male" checked> <label
+                    for="female">Female</label> <input type="radio" name="gender" id="female" value="female"></fieldset>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Choose as many favorite colors as you'd like:</legend>
+                <label for="red">Red</label> <input type="checkbox" name="favcolor" id="red" value="red"> <label
+                    for="green">Green</label> <input type="checkbox" name="favcolor" id="green" value="green"> <label
+                    for="blue">Blue</label> <input type="checkbox" name="favcolor" id="blue" value="blue"></fieldset>
+            <fieldset data-role="fieldcontain"><label for="day">Select Day</label> <select name="day" id="day">
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wednesday</option>
+            </select></fieldset>
+
+            <select name="day" id="day" multiple data-native-menu="false">
+                <optgroup label="Weekdays">
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                </optgroup>
+                <optgroup label="Weekends">
+                    <option value="sat">Saturday</option>
+                    <option value="sun">Sunday</option>
+                </optgroup>
+            </select>
+
+        </form>
+
         <ol data-role="listview" data-inset="true">
             <li><a href="#">列表项m</a></li>
             <li><a href="#">列表项m</a></li>
@@ -40,25 +101,34 @@
             <li><a href="#">Adele</a></li>
             <li><a href="#">Agnes</a></li>
             <li><a href="#">Billy</a></li>
-            <li><a href="#"><img
-                    src="http://images.mac.xunlei.com/full/f9c824faf106a0396b6c2e8b11c937fff1653c4c@2x.jpeg"
-                    class="ui-li-icon">Calvin</a></li>
+            <li><a href="#">
+                <img
+                        src="http://images.mac.xunlei.com/full/f9c824faf106a0396b6c2e8b11c937fff1653c4c@2x.jpeg"
+                        class="ui-li-icon">Calvin</a>
+
+            </li>
+            <li><a href="http://m.baidu.com" data-rel="dialog">下载浏览器</a></li>
         </ul>
 
-        <a href="#" data-role="button">按钮1</a>
+        <a href="#" data-role="button"  data-corners="true" data-mini="true">按钮</a>
         <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="right">按钮2</a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
-    <div data-role="footer" class="ui-btn" data-position="fixed" data-fullscreen="true">
+    <div data-role="footer" class="ui-btn" data-position="fixed" data-fullscreen="true" data-theme="e" >
         <div data-role="controlgroup" data-type="horizontal">
-            <a href="#" data-role="button">在 Facebook上关注我</a>
+            <a href="#" data-role="button"  data-theme="c">在 Facebook上关注我</a>
             <a href="#" data-role="button">在Twitter上关注我</a>
-            <a href="#" data-role="button">在Instagram上关注我</a>
+            <a href="#" data-role="button" data-icon="star">在Instagram上关注我</a>
         </div>
     </div>
 
 </div>
 
 </body>
+<script type="text/javascript">
+    $("li").on("swiperight",function(){  $(this).hide(); });
+    $(document).on("scrollstart",function(){ console.log("x"); });
+
+</script>
 </html>
