@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="resources/assets/css/jquery.mobile-1.4.5.css">
-<script type="text/javascript" src="resources/assets/js/jquery-1.11.3.js"></script>
-<script type="text/javascript" src="resources/assets/js/jquery.mobile-1.4.5.js"></script>
-	<title>index</title>
-	<script type="text/javascript">
-		alert("try try");
-	</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="resources/assets/css/jquery.mobile-1.4.5.css">
+    <script type="text/javascript" src="resources/assets/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="resources/assets/js/jquery.mobile-1.4.5.js"></script>
+    <title>index</title>
+    <script type="text/javascript">
+        //		alert("try try");
+    </script>
 </head>
 <body>
-<div id="mydiv"></div>
+<div data-role="page" id="pageone">
+    <div data-role="header" data-position="fixed" data-fullscreen="true">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="http://m.baidu.com" class="ui-btn-active  ui-state-persist">首页</a>
+                </li>
+                <li>
+                    <a href="#anylink">页面二</a>
+                </li>
+                <li>
+                    <a href="#anylink">搜索</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">
+        <ol data-role="listview" data-inset="true">
+            <li><a href="#">列表项m</a></li>
+            <li><a href="#">列表项m</a></li>
+            <li><a href="#">列表项m</a></li>
+            <li><a href="#">列表项m</a></li>
+        </ol>
+        <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="搜索姓名">
+            <li><a href="#">Adele</a></li>
+            <li><a href="#">Agnes</a></li>
+            <li><a href="#">Billy</a></li>
+            <li><a href="#"><img
+                    src="http://images.mac.xunlei.com/full/f9c824faf106a0396b6c2e8b11c937fff1653c4c@2x.jpeg"
+                    class="ui-li-icon">Calvin</a></li>
+        </ul>
+
+        <a href="#" data-role="button">按钮1</a>
+        <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="right">按钮2</a>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div data-role="footer" class="ui-btn" data-position="fixed" data-fullscreen="true">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button">在 Facebook上关注我</a>
+            <a href="#" data-role="button">在Twitter上关注我</a>
+            <a href="#" data-role="button">在Instagram上关注我</a>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
