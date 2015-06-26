@@ -13,24 +13,30 @@
 </head>
 <body>
 
-
+<img src="resources/assets/imgs/Swan_small.jpg" id="show_image">
+<br>
 <div style="display:none;" class="html5gallery" data-skin="gallery" data-width="480" data-height="272">
     <!-- Add images to Gallery -->
     <a href="resources/assets/imgs/Tulip_large.jpg"><img src="resources/assets/imgs/Tulip_small.jpg" alt="Tulips"></a>
-    <a href="resources/assets/imgs/Swan_large.jpg"><img src="resources/assets/imgs/Swan_small.jpg" alt="Swan on Lake"></a>
+    <a href="resources/assets/imgs/Swan_large.jpg"><img src="resources/assets/imgs/Swan_small.jpg"
+                                                        alt="Swan on Lake"></a>
 
     <!-- Add videos to Gallery -->
-    <a href="resources/assets/imgs/Big_Buck_Bunny.mp4"><img src="resources/assets/imgs/Big_Buck_Bunny.jpg" alt="Big Buck Bunny, Copyright Blender Foundation"></a>
+    <a href="resources/assets/imgs/Big_Buck_Bunny.mp4"><img src="resources/assets/imgs/Big_Buck_Bunny.jpg"
+                                                            alt="Big Buck Bunny, Copyright Blender Foundation"></a>
 
     <!-- Add Youtube video to Gallery -->
-    <a href="http://www.youtube.com/embed/YE7VzlLtp-4"><img src="http://img.youtube.com/vi/YE7VzlLtp-4/2.jpg" alt="Youtube Video"></a>
+    <a href="http://www.youtube.com/embed/YE7VzlLtp-4"><img src="http://img.youtube.com/vi/YE7VzlLtp-4/2.jpg"
+                                                            alt="Youtube Video"></a>
 
     <!-- Add Vimeo video to Gallery -->
-    <a href="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0"><img src="resources/assets/imgs/Big_Buck_Bunny.jpg" alt="Vimeo Video"></a>
+    <a href="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0"><img
+            src="resources/assets/imgs/Big_Buck_Bunny.jpg" alt="Vimeo Video"></a>
 </div>
 
 <br>
-<div data-role="page" id="pageone" >
+
+<div data-role="page" id="pageone">
     <div data-role="header" data-fullscreen="true">
         <div data-role="navbar">
             <ul>
@@ -67,7 +73,7 @@
 
             </select></div>
         </form>
-        <input type="file" accept="image/*;capture=camera">
+        <input type="file" accept="image/*;capture=camera" id="file-input">
 
         <form method="post" action="demo_form.php">
             <div data-role="fieldcontain"><label for="fullname">全名:</label> <input type="text" name="fullname"
@@ -129,25 +135,30 @@
             <li><a href="http://m.baidu.com" data-rel="dialog">下载浏览器</a></li>
         </ul>
 
-        <a href="#" data-role="button"  data-corners="true" data-mini="true">按钮</a>
+        <a href="#" data-role="button" data-corners="true" data-mini="true">按钮</a>
         <a href="#" data-role="button" data-icon="arrow-l" data-iconpos="right">按钮2</a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
-    <div data-role="footer" class="ui-btn" data-position="fixed" data-fullscreen="true" data-theme="e" >
+    <div data-role="footer" class="ui-btn" data-position="fixed" data-fullscreen="true" data-theme="e">
         <div data-role="controlgroup" data-type="horizontal">
-            <a href="#" data-role="button"  data-theme="c">在 Facebook上关注我</a>
+            <a href="#" data-role="button" data-theme="c">在 Facebook上关注我</a>
             <a href="#" data-role="button">在Twitter上关注我</a>
             <a href="#" data-role="button" data-icon="star">在Instagram上关注我</a>
         </div>
     </div>
 
 </div>
+
 <video autoplay></video>
 </body>
 <script type="text/javascript">
-    $("li").on("swiperight",function(){  $(this).hide(); });
-    $(document).on("scrollstart",function(){ console.log("x"); });
+    $("li").on("swiperight", function () {
+        $(this).hide();
+    });
+    $(document).on("scrollstart", function () {
+        console.log("x");
+    });
     function hasGetUserMedia() {
         return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -155,23 +166,42 @@
 
     if (hasGetUserMedia()) {
         // Good to go!
-        var errorCallback = function(e) {
+        var errorCallback = function (e) {
             console.log('Reeeejected!', e);
         };
 
         // Not showing vendor prefixes.
-        navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) {
+        navigator.getUserMedia({video: true, audio: true}, function (localMediaStream) {
             var video = document.querySelector('video');
             video.src = window.URL.createObjectURL(localMediaStream);
 
             // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
             // See crbug.com/110938.
-            video.onloadedmetadata = function(e) {
+            video.onloadedmetadata = function (e) {
                 // Ready to go. Do some stuff.
             };
         }, errorCallback);
     } else {
         alert('getUserMedia() is not supported in your browser');
+    }
+
+
+    $("#file-input").on("change", function show_pic() {
+        alert("1");
+        var file = document.getElementById("file-input").files[0];
+        alert("2");
+        var blob_url = window.URL.createObjectURL(file);
+        alert("3");
+        $("#show_image-input").attr("src", blob_url);
+        alert("4");
+
+    });
+    // Check for the various File API support.
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        // Great success! All the File APIs are supported.
+        alert('The File APIs are fully supported in this browser.');
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
     }
 </script>
 </html>
